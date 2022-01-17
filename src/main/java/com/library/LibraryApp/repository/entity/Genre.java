@@ -20,5 +20,6 @@ public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long genreId;
+
     private String title;
 }

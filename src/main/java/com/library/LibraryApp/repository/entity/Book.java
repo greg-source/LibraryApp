@@ -19,10 +19,12 @@ public class Book {
     private Long bookId;
     private String title;
     private Timestamp year;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id",
             referencedColumnName = "authorId")
     private Author author;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "genre_id",
             referencedColumnName = "genreId")
