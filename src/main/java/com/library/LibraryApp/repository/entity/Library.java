@@ -19,4 +19,5 @@ public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long libraryId;
+
 }
