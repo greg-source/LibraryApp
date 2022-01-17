@@ -1,11 +1,9 @@
 package com.library.LibraryApp.controller;
 
+import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.BookService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BookController {
@@ -20,6 +18,20 @@ public class BookController {
 
     @GetMapping(path = "/books/{id}")
     public ResponseEntity<?> findAllById(@PathVariable Long id) {
-        return ResponseEntity.ok(bookService.findAllById(id));
+        return ResponseEntity.ok(bookService.findById(id));
+    }
+    @PostMapping(path = "/books")
+    public ResponseEntity<?> insert(@RequestBody Book book) {
+        return ResponseEntity.ok(bookService.insert(book));
+    }
+
+    @DeleteMapping(path = "/books")
+    public ResponseEntity<?> delete(@RequestParam Long id) {
+        bookService.deleteById(id);
+        return ResponseEntity.ok("OK");
+    }
+    @PutMapping(path = "/books")
+    public ResponseEntity<?> update(@RequestBody Book book) {
+        return ResponseEntity.ok(bookService.update(book));
     }
 }

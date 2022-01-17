@@ -5,7 +5,13 @@ import com.library.LibraryApp.repository.entity.Book;
 import java.util.List;
 
 public interface BookService {
-    public List<Book> findAll();
+    List<Book> findAll();
 
-    public List<Book> findAllById(Long id);
+    Book findById(Long id);
+
+    Book insert(Book book);
+
+    void deleteById(Long id);
+
+    Book update(Book book);
 }

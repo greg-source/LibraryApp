@@ -20,7 +20,22 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<Book> findAllById(Long id) {
-        return bookRepository.findAllByBookId(id);
+    public Book findById(Long id) {
+        return bookRepository.findByBookId(id);
+    }
+
+    @Override
+    public Book insert(Book book) {
+        return bookRepository.save(book);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        bookRepository.deleteById(id);
+    }
+
+    @Override
+    public Book update(Book book) {
+        return bookRepository.save(book);
     }
 }
