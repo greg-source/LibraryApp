@@ -25,8 +25,8 @@ public class BookController {
         return ResponseEntity.ok(bookService.insert(book));
     }
 
-    @DeleteMapping(path = "/books")
-    public ResponseEntity<?> delete(@RequestParam Long id) {
+    @DeleteMapping(path = "/books/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         bookService.deleteById(id);
         return ResponseEntity.ok("OK");
     }
