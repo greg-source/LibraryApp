@@ -6,31 +6,32 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/books")
 public class BookController {
     private BookService bookService;
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
-    @GetMapping(path = "/books")
+    @GetMapping
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(bookService.findAll());
     }
 
-    @GetMapping(path = "/books/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<?> findAllById(@PathVariable Long id) {
         return ResponseEntity.ok(bookService.findById(id));
     }
-    @PostMapping(path = "/books")
+    @PostMapping
     public ResponseEntity<?> insert(@RequestBody Book book) {
         return ResponseEntity.ok(bookService.insert(book));
     }
 
-    @DeleteMapping(path = "/books/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         bookService.deleteById(id);
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok().build();
     }
-    @PutMapping(path = "/books")
+    @PutMapping
     public ResponseEntity<?> update(@RequestBody Book book) {
         return ResponseEntity.ok(bookService.update(book));
     }

@@ -17,7 +17,7 @@ public class AuthorController {
         return ResponseEntity.ok(authorService.findAll());
     }
 
-    @GetMapping(path = "/authors/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<?> findAllById(@PathVariable Long id) {
         return ResponseEntity.ok(authorService.findById(id));
     }
@@ -25,7 +25,7 @@ public class AuthorController {
     public ResponseEntity<?> insert(@RequestBody Author author) {
         return ResponseEntity.ok(authorService.insert(author));
     }
-    @DeleteMapping(path = "/authors/{id}")
+    @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         authorService.deleteById(id);
         return ResponseEntity.ok("OK");
