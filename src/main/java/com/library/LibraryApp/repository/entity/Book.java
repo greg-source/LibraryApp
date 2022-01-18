@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -18,7 +20,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long bookId;
     private String title;
-    private Timestamp year;
+    private LocalDate year;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "author_id",

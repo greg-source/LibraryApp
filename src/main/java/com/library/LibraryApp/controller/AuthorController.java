@@ -1,7 +1,6 @@
 package com.library.LibraryApp.controller;
 
 import com.library.LibraryApp.repository.entity.Author;
-import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.AuthorService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +19,9 @@ public class AuthorController {
 
     @GetMapping(path = "/authors/{id}")
     public ResponseEntity<?> findAllById(@PathVariable Long id) {
-        return ResponseEntity.ok(authorService.findAllById(id));
+        return ResponseEntity.ok(authorService.findById(id));
     }
-    @PostMapping(path = "/authors")
+    @PostMapping
     public ResponseEntity<?> insert(@RequestBody Author author) {
         return ResponseEntity.ok(authorService.insert(author));
     }
@@ -31,7 +30,7 @@ public class AuthorController {
         authorService.deleteById(id);
         return ResponseEntity.ok("OK");
     }
-    @PutMapping(path = "/authors")
+    @PutMapping
     public ResponseEntity<?> update(@RequestBody Author author) {
         return ResponseEntity.ok(authorService.update(author));
     }

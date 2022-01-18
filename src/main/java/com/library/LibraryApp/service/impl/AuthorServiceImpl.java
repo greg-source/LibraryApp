@@ -22,7 +22,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Author findAllById(Long id) {
+    public Author findById(Long id) {
         return authorRepository.findByAuthorId(id);
     }
 

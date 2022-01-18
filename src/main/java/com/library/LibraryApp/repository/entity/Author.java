@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Data
@@ -22,7 +24,7 @@ public class Author {
     private Long authorId;
     private String firstName;
     private String lastName;
-    private Timestamp bornYear;
-    private Timestamp deathYear;
+    private LocalDate bornYear;
+    private LocalDate deathYear;
 
 }
