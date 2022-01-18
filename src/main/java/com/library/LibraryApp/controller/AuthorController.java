@@ -26,4 +26,13 @@ public class AuthorController {
     public ResponseEntity<?> insert(@RequestBody Author author) {
         return ResponseEntity.ok(authorService.insert(author));
     }
+    @DeleteMapping(path = "/authors/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
+        authorService.deleteById(id);
+        return ResponseEntity.ok("OK");
+    }
+    @PutMapping(path = "/authors")
+    public ResponseEntity<?> update(@RequestBody Author author) {
+        return ResponseEntity.ok(authorService.update(author));
+    }
 }

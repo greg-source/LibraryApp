@@ -2,6 +2,7 @@ package com.library.LibraryApp.service.impl;
 
 import com.library.LibraryApp.repository.AuthorRepository;
 import com.library.LibraryApp.repository.entity.Author;
+import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.AuthorService;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,16 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public Author insert(Author author) {
+        return authorRepository.save(author);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        authorRepository.deleteById(id);
+    }
+
+    @Override
+    public Author update(Author author) {
         return authorRepository.save(author);
     }
 }
