@@ -17,12 +17,12 @@ public class Library {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long libraryId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "book_id",
             referencedColumnName = "bookId")
     private Book book;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "user_id",
             referencedColumnName = "userId")
     private User user;

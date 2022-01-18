@@ -20,14 +20,15 @@ public class Book {
     private String title;
     private Timestamp year;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "author_id",
             referencedColumnName = "authorId")
     private Author author;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "genre_id",
             referencedColumnName = "genreId")
     private Genre genre;
+    private String link;
 
 }
