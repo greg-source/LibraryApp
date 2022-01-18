@@ -6,13 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/authors")
 public class AuthorController {
     private AuthorService authorService;
 
     public AuthorController(AuthorService authorService) {
         this.authorService = authorService;
     }
-    @GetMapping(path = "/authors")
+
+    @GetMapping
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(authorService.findAll());
     }
@@ -28,7 +30,7 @@ public class AuthorController {
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         authorService.deleteById(id);
-        return ResponseEntity.ok("OK");
+        return ResponseEntity.ok().build();
     }
     @PutMapping
     public ResponseEntity<?> update(@RequestBody Author author) {

@@ -4,6 +4,7 @@ import com.library.LibraryApp.repository.AuthorRepository;
 import com.library.LibraryApp.repository.entity.Author;
 import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
