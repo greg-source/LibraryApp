@@ -46,7 +46,7 @@ class AuthorServiceImplTest {
     @Test
     void canFindAllById() {
         Integer testAuthorMapSize = testAuthorMap.size();
-        for (long i = 0; i < testAuthorMapSize; i++) {
+        for (long i = 1; i <= testAuthorMapSize; i++) {
             authorRepository.save(testAuthorMap.get(i));
             underTest.findById(i);
             Mockito.verify(authorRepository).findByAuthorId(i);
@@ -54,18 +54,18 @@ class AuthorServiceImplTest {
     }
 
     @Test
-    void insert() {
+    void canInsert() {
         Integer testAuthorMapSize = testAuthorMap.size();
-        for (long i = 0; i < testAuthorMapSize; i++) {
+        for (long i = 1; i <= testAuthorMapSize; i++) {
             underTest.insert(testAuthorMap.get(i));
             Mockito.verify(authorRepository).save(testAuthorMap.get(i));
         }
     }
 
     @Test
-    void deleteById() {
+    void canDeleteById() {
         Integer testAuthorMapSize = testAuthorMap.size();
-        for (long i = 0; i < testAuthorMapSize; i++) {
+        for (long i = 1; i <= testAuthorMapSize; i++) {
             authorRepository.save(testAuthorMap.get(i));
             underTest.deleteById(i);
             Mockito.verify(authorRepository).deleteById(i);
@@ -73,9 +73,9 @@ class AuthorServiceImplTest {
     }
 
     @Test
-    void update() {
+    void canUpdate() {
         Integer testAuthorMapSize = testAuthorMap.size();
-        for (long i = 0; i < testAuthorMapSize; i++) {
+        for (long i = 1; i <= testAuthorMapSize; i++) {
             underTest.update(testAuthorMap.get(i));
             Mockito.verify(authorRepository).save(testAuthorMap.get(i));
         }
