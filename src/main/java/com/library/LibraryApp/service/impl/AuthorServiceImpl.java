@@ -6,13 +6,16 @@ import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class AuthorServiceImpl implements AuthorService {
     private AuthorRepository authorRepository;
 
+    @Autowired
     public AuthorServiceImpl(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }

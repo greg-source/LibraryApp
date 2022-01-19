@@ -22,12 +22,12 @@ public class Book {
     private String title;
     private LocalDate year;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "author_id",
             referencedColumnName = "authorId")
     private Author author;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "genre_id",
             referencedColumnName = "genreId")
     private Genre genre;

@@ -2,6 +2,7 @@ package com.library.LibraryApp.controller;
 
 import com.library.LibraryApp.repository.entity.Book;
 import com.library.LibraryApp.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/books")
 public class BookController {
     private BookService bookService;
+
+    @Autowired
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
+
     @GetMapping
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(bookService.findAll());

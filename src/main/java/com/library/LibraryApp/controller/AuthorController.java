@@ -2,6 +2,7 @@ package com.library.LibraryApp.controller;
 
 import com.library.LibraryApp.repository.entity.Author;
 import com.library.LibraryApp.service.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class AuthorController {
     private AuthorService authorService;
 
+    @Autowired
     public AuthorController(AuthorService authorService) {
         this.authorService = authorService;
     }

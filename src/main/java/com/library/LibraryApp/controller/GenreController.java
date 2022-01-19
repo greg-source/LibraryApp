@@ -3,6 +3,7 @@ package com.library.LibraryApp.controller;
 import com.library.LibraryApp.repository.entity.Genre;
 import com.library.LibraryApp.service.GenreService;
 import com.library.LibraryApp.service.GenreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class GenreController {
     private GenreService genreService;
 
+    @Autowired
     public GenreController(GenreService genreService) {
         this.genreService = genreService;
     }
+
     @GetMapping
     public ResponseEntity<?> findAll() {
         return ResponseEntity.ok(genreService.findAll());
@@ -24,6 +27,7 @@ public class GenreController {
     public ResponseEntity<?> findAllById(@PathVariable Long id) {
         return ResponseEntity.ok(genreService.findById(id));
     }
+
     @PostMapping
     public ResponseEntity<?> insert(@RequestBody Genre genre) {
         return ResponseEntity.ok(genreService.insert(genre));
