@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,14 +77,28 @@ class GenreControllerTest {
 
     @Test
     void insert() throws Exception {
+        Genre genreOne = Genre.builder().genreId(1l).title("Classic").build();
+
+        String content = objectMapper.writeValueAsString(genreOne);
+
+        mockMvc.perform(post("/genres").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).content(content));
+
+        Mockito.verify(genreService, Mockito.times(1)).insert(genreOne);
+    }
+
+    @Test
+    void delete() throws Exception {
 
     }
 
     @Test
-    void delete() {
-    }
+    void update() throws Exception {
+        Genre genreOne = Genre.builder().genreId(1l).title("Classic").build();
 
-    @Test
-    void update() {
+        String content = objectMapper.writeValueAsString(genreOne);
+
+        mockMvc.perform(post("/genres").contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON).content(content));
+
+        Mockito.verify(genreService, Mockito.times(1)).insert(genreOne);
     }
 }
