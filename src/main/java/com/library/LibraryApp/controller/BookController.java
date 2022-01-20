@@ -1,6 +1,7 @@
 package com.library.LibraryApp.controller;
 
-import com.library.LibraryApp.repository.entity.Book;
+import com.library.LibraryApp.entity.Book;
+import com.library.LibraryApp.entity.dto.BookDto;
 import com.library.LibraryApp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

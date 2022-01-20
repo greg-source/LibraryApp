@@ -1,6 +1,7 @@
 package com.library.LibraryApp.service;
 
-import com.library.LibraryApp.repository.entity.Book;
+import com.library.LibraryApp.entity.Book;
+import com.library.LibraryApp.entity.dto.BookDto;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface BookService {
     void deleteById(Long id);
 
     Book update(Book book);
+
+    Book insertBookWithExistingAuthorAndGenre(BookDto bookDto);
 }

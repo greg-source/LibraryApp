@@ -1,22 +1,16 @@
 package com.library.LibraryApp.controller;
 
 import com.library.LibraryApp.repository.AuthorRepository;
-import com.library.LibraryApp.repository.entity.Author;
+import com.library.LibraryApp.entity.Author;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.event.annotation.BeforeTestClass;
 import org.springframework.web.client.RestTemplate;
 
-import java.sql.Timestamp;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

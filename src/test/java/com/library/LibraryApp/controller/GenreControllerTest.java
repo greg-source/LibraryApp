@@ -1,23 +1,17 @@
 package com.library.LibraryApp.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.library.LibraryApp.repository.GenreRepository;
-import com.library.LibraryApp.repository.entity.Genre;
+import com.library.LibraryApp.entity.Genre;
 import com.library.LibraryApp.service.GenreService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultMatcher;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -88,7 +82,11 @@ class GenreControllerTest {
 
     @Test
     void delete() throws Exception {
+        Genre genreOne = Genre.builder().genreId(1l).title("Classic").build();
 
+        mockMvc.perform(MockMvcRequestBuilders.delete("/genres/1"));
+
+        Mockito.verify(genreService, Mockito.times(1)).deleteById(genreOne.getGenreId());
     }
 
     @Test

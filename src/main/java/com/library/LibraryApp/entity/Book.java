@@ -1,4 +1,4 @@
-package com.library.LibraryApp.repository.entity;
+package com.library.LibraryApp.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,9 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Entity
 @Data

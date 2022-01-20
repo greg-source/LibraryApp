@@ -1,6 +1,6 @@
 package com.library.LibraryApp.service;
 
-import com.library.LibraryApp.repository.entity.Author;
+import com.library.LibraryApp.entity.Author;
 
 import java.util.List;
 

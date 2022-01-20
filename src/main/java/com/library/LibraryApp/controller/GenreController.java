@@ -1,7 +1,6 @@
 package com.library.LibraryApp.controller;
 
-import com.library.LibraryApp.repository.entity.Genre;
-import com.library.LibraryApp.service.GenreService;
+import com.library.LibraryApp.entity.Genre;
 import com.library.LibraryApp.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

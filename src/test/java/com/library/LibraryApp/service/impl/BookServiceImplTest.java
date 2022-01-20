@@ -1,7 +1,7 @@
 package com.library.LibraryApp.service.impl;
 
 import com.library.LibraryApp.repository.BookRepository;
-import com.library.LibraryApp.repository.entity.Book;
+import com.library.LibraryApp.entity.Book;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

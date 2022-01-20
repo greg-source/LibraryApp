@@ -1,4 +1,4 @@
-package com.library.LibraryApp.repository.entity;
+package com.library.LibraryApp.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -2,7 +2,7 @@ package com.library.LibraryApp.service.impl;
 
 
 import com.library.LibraryApp.repository.AuthorRepository;
-import com.library.LibraryApp.repository.entity.Author;
+import com.library.LibraryApp.entity.Author;
 import com.library.LibraryApp.service.AuthorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,7 +1,7 @@
 package com.library.LibraryApp.service.impl;
 
 import com.library.LibraryApp.repository.GenreRepository;
-import com.library.LibraryApp.repository.entity.Genre;
+import com.library.LibraryApp.entity.Genre;
 import com.library.LibraryApp.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
