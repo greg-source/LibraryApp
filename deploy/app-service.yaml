@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: libraryapp
+  labels:
+    name: libraryapp
+spec:
+  type: NodePort
+  ports:
+    - nodePort: 30020
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: libraryapp
