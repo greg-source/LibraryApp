@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: libraryapp
-  replicas:  {{ .appReplicaCount }}
+  replicas:  {{ .Values.app.replicacount }}
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: libraryapp
-          image: libraryapp:latest
+          image: {{ .Values.app.image }}
           imagePullPolicy: Never
           ports:
             - containerPort: 8080

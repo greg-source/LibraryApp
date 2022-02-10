@@ -1,4 +1,7 @@
-dbReplicaCount: 1
-appReplicaCount: 1
-dbPassword: password
-
+db:
+  replicacount: 1
+  password: "password"
+  image: "mysql:latest"
+app:
+  image: "libraryapp:latest"
+  replicacount: 1
